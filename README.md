@@ -27,6 +27,7 @@ open terminal and type
 - Messege 提供使用者留言
 - InfoMessege 提供管理者（管委會）新增公告
 - Poll 提供使用者及管理者 *意見連署*
+- 管委會權限須由superuser開啟
 
 # Messege 留言 功能
 -  MessegeDetail 瀏覽 留言
