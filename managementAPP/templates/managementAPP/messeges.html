@@ -1,0 +1,8 @@
+{% extends 'managementAPP/main.html' %}
+{% block content %}
+    <h1>Content: {{messege.messege_content}}</h1>
+    <p>creater: {{messege.creater}}</p>
+    <br>
+    <br>
+    <a class="btn btn-primary" href="{% url 'messeges' %}" role="button">BACK</a>
+{% endblock content %}

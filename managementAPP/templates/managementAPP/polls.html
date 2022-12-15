@@ -1,0 +1,19 @@
+{% extends 'managementAPP/main.html' %}
+{% block content %}
+    <h1>Title:  {{poll.title}}</h1>
+    <h3>Detail:  {{poll.detail}}</h3>
+    <p>Creater:  {{poll.creater}}</p>
+    <h3>Starting date:  {{poll.start_date}}</h3>
+    <h3>Ending date:  {{poll.end_date}}</h3>
+    <br>
+    <br>
+    <h1>Total: {{ poll.get_vote_count }} votes</h3>
+    <ul class="list-group">
+        {% for choice in poll.choice_set.all %}
+            {{ choice.choice }}: {{ choice.get_vote_count }}
+            <br>
+        {% endfor %}
+    </ul>
+    <br>
+    <a class="btn btn-primary" href="{% url 'polls' %}" role="button">BACK</a>
+{% endblock content %}

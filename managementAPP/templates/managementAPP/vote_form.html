@@ -1,0 +1,26 @@
+{% extends 'managementAPP/main.html' %}
+{% block content %}
+    <h1>Vote Form!!!!</h1>
+
+    <form method="POST" action="">
+        {% csrf_token %}
+        <h1>
+            Current User: {{request.user}}
+            <br>
+            Current Poll: {{poll.title}}
+        </h1>
+        <h2>
+            Detail: {{poll.detail}}
+        </h2>
+        {% for choice in poll.choice_set.all %}
+        <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
+        <label for="choice{{ forloop.counter }}">{{ choice.choice }}</label>
+        <br>
+        {% endfor %}
+        
+        <input type="submit" value="Submit">
+    </form>
+    <br>
+    <br>
+    <a class="btn btn-primary" href="{% url 'polls' %}" role="button">BACK</a>
+{% endblock content %}

@@ -1,0 +1,20 @@
+{% extends 'managementAPP/main.html' %}
+{% block pre_login_content %}
+
+    <h1>Register</h1>
+    <form method="POST" action="">
+        {% csrf_token %}
+        <label>{{form.name.label}}</label>
+        {{form.name}}
+        <label>{{form.username.label}}</label>
+        {{form.username}}
+        <br>
+        <label>{{form.password1.label}}</label>
+        {{form.password1}}
+        <br>
+        <label>{{form.password2.label}}</label>
+        {{form.password2}}
+        <br>
+        <input style="margin-top:10px ;" class="button" type="submit" value="Register">
+    </form>
+{% endblock pre_login_content %}

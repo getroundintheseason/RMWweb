@@ -1,0 +1,43 @@
+{% extends 'managementAPP/main.html' %}
+{% block content %}
+    <h1>
+        {{request.user}} &#128537;!!<br>
+        Messeges!!
+    </h1>
+    <a class="btn btn-primary" href="{% url 'messege-create' %}" role="button">create messege</a>
+    <form method="GET">
+        <input type="text" name="search-area" value="{{ search_input }}">
+        <input type="submit" value="Search">
+    </form>
+
+    <table border="1" class="table table-striped table-sm">
+        <thead>
+            <tr>
+                <th scope="col">messege content</th>
+                <th scope="col">creater</th>
+                <th scope="col">created time</th>
+                <th scope="col">Fuction</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for messege in messeges %}
+            <tr>
+                <td>
+                    <a href="{% url 'messege' messege.messege_id %}">{{messege.messege_content}}</a>
+                </td>
+                <td>{{messege.creater}}</td>
+                <td>{{messege.created}}</td>
+                <td colspan="2">
+                        {% if request.user == messege.creater %}
+                            <a class="btn btn-primary" href="{% url 'messege-update' messege.messege_id%}" role="button">Edit</a>
+                            <a class="btn btn-primary" href="{% url 'messege-delete' messege.messege_id%}" role="button">Delete</a>
+                        {% endif %}
+                </td>
+            </tr>
+            {% empty %}
+                <h3>no item in list</h3>
+            {% endfor %}
+        </tbody>
+            
+    </table>
+{% endblock content %}

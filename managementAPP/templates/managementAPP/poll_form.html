@@ -1,0 +1,16 @@
+{% extends 'managementAPP/main.html' %}
+{% block content %}
+    <h1>Poll Form!!!!</h1>
+    {% if error_messege %}
+    <h1 style="color: red;">{{error_messege}}</h1>
+    {% endif %}
+    <form method="POST" action="">
+        {% csrf_token %}
+        {{poll_form.as_p}}
+        
+        <input type="submit" value="Submit">
+    </form>
+    <br>
+    <br>
+    <a class="btn btn-primary" href="{% url 'polls' %}" role="button">BACK</a>
+{% endblock content %}
