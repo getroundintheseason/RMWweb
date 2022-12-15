@@ -2,7 +2,7 @@
 # 大樓管委會系統
 提供住戶與管委會交換意見及交流的網站，意圖透過資訊透明化使住戶和諧。
 ## Getting Started
-*python ==3.7 or up and django == 3 or up*
+ *python ==3.7 or up and django == 3 or up*
 ## Installing
 open terminal and type 
     
