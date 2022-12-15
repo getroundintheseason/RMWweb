@@ -5,6 +5,7 @@
 *python ==3.7 or up and django == 3 or up*
 ## Installing
 open terminal and type 
+    
     git clone https://github.com/getroundintheseason/RMWweb.git
     cd RMWweb
     pip3 install -r requirements.txt
